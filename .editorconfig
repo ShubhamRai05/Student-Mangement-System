@@ -1,0 +1,17 @@
+import sqlite3
+
+# Establish a connection to the SQLite database
+conn = sqlite3.connect('example.db')  # Change 'example.db' to your database file
+
+# Create a cursor object to interact with the database
+cursor = conn.cursor()
+
+# Execute SQL queries using the cursor
+cursor.execute('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)')
+
+# Commit the changes to the database
+conn.commit()
+
+# Close the cursor and connection when done
+cursor.close()
+conn.close()
